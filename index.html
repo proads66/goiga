@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '989082304008178');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=989082304008178&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JGNCSJ6GB6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JGNCSJ6GB6');
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Xác minh</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 20px;
+}
+
+.robot {
+  width: 120px;
+  margin-bottom: 20px;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #111;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* ===== BUTTON STYLE ===== */
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin: 24px 0;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #1ea7ff, #007bff);
+  color: white;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* hover glow */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30,167,255,0.4);
+}
+
+/* click effect */
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* ripple effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <img class="robot" src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"/>
+
+  <h2>XÁC MINH BẠN LÀ CON NGƯỜI</h2>
+
+  <button class="btn" onclick="go(event, LINK_HUMAN)">
+    TÔI LÀ CON NGƯỜI
+  </button>
+
+  <button class="btn" onclick="go(event, LINK_ROBOT)">
+    ROBOT
+  </button>
+
+</div>
+
+<script>
+const LINK_HUMAN = "https://t.me/+CFri0cckIrg5MjU1";
+const LINK_ROBOT = "https://t.me/+CFri0cckIrg5MjU1";
+
+/* ripple + redirect */
+function go(e, link) {
+  const btn = e.currentTarget;
+
+  // tạo ripple
+  const circle = document.createElement("span");
+  const rect = btn.getBoundingClientRect();
+
+  circle.style.left = (e.clientX - rect.left) + "px";
+  circle.style.top = (e.clientY - rect.top) + "px";
+  circle.classList.add("ripple");
+
+  btn.appendChild(circle);
+
+  setTimeout(() => {
+    circle.remove();
+    window.location.href = link;
+  }, 250);
+}
+</script>
+
+</body>
+</html>
